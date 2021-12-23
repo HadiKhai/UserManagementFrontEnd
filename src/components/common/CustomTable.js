@@ -12,6 +12,7 @@ const CustomTable = () => {
 
     const {data: AllUsers, isLoading} = hooks.useAllUsers()
     const [gridApi, setGridApi] = useState(null);
+    const [gridColumnApi, setGridColumnApi] = useState(null);
 
     const frameworkComponents = {
         TextEditor,
@@ -21,10 +22,9 @@ const CustomTable = () => {
 
     const onGridReady = (params) => {
         setGridApi(params.api);
-
+        setGridColumnApi(params.columnApi);
         params.api.setRowData(AllUsers)
     }
-
 
     useEffect(() => {
         if (gridApi) {
@@ -32,10 +32,16 @@ const CustomTable = () => {
         }
     }, [AllUsers,gridApi])
 
+    useEffect(() => {
+        console.log('entered')
+        if(gridApi) {
+            gridApi.sizeColumnsToFit()
+        }
+    },[gridApi])
+
     if (isLoading) {
         return <CircularProgress/>
     }
-
     return (
         <div style={{width: '100%', height: '100%', padding: '20px 20px 0px 20px'}}>
             <div
@@ -56,6 +62,7 @@ const CustomTable = () => {
                     suppressClickEdit
                     pagination={true}
                     paginationAutoPageSize={true}
+                    autoSizePadding={true}
                 >
                 </AgGridReact>
             </div>
