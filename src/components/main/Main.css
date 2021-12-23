@@ -2,6 +2,10 @@
     margin: 0px 10px 0px 30px;
 }
 
+.root {
+    background-color: rgba(47, 119, 142, 1) !important;
+
+}
 header {
     position: relative;
     z-index: 1;

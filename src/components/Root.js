@@ -4,12 +4,12 @@ import {createTheme} from "@mui/material";
 import {ThemeProvider} from "@emotion/react";
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import {queryClient, QueryClientProvider, ReactQueryDevtools,} from '../query';
+// import {queryClient, QueryClientProvider, ReactQueryDevtools,} from '../query';
 
 const Theme = createTheme({
     palette: {
         primary: {
-            main: '#00614b',
+            main: '#ffffff',
         },
     },
     typography: {
@@ -71,8 +71,8 @@ const Theme = createTheme({
 const Root = () => (
 
     <ThemeProvider theme={Theme}>
-        <QueryClientProvider client={queryClient}>
-            <ReactQueryDevtools initialIsOpen/>
+        {/*<QueryClientProvider client={queryClient}>*/}
+        {/*    <ReactQueryDevtools initialIsOpen/>*/}
 
             <App/>
             <ToastContainer
@@ -87,7 +87,7 @@ const Root = () => (
                 autoClose={2000}
             />
             <ToastContainer />
-        </QueryClientProvider>
+        {/*</QueryClientProvider>*/}
 
     </ThemeProvider>
 )

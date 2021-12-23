@@ -22,18 +22,14 @@ export const CustomFormControl = styled(FormControl)({
 const Main = ({children}) => {
 
     return (
-        <Box>
+        <Box className="root">
             <AppBar position="sticky" className="header">
                 <Toolbar sx={{paddingLeft: '0 !important'}}>
                     <img className={"logo"} src={InfoCubedLogo} height={40} alt="logo"
                           style={{pointerEvents: "all", cursor: 'pointer'}}/>
                 </Toolbar>
             </AppBar>
-            <div style={{
-                backgroundColor:"rgba(47, 119, 142, 1);"
-            }}>
             {children}
-            </div>
             <footer>
                 <Typography variant="body1">
                     UserManagement CRUD by HadiKhairallah
