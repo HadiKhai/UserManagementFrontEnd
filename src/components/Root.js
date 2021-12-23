@@ -4,12 +4,12 @@ import {createTheme} from "@mui/material";
 import {ThemeProvider} from "@emotion/react";
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-// import {queryClient, QueryClientProvider, ReactQueryDevtools,} from '../query';
+import {queryClient, QueryClientProvider, ReactQueryDevtools,} from '../query';
 
 const Theme = createTheme({
     palette: {
         primary: {
-            main: '#ffffff',
+            main: 'rgba(47, 119, 142, 1)',
         },
     },
     typography: {
@@ -52,16 +52,14 @@ const Theme = createTheme({
             fontSize: '0.7em'
         },
     },
-    components:{
-        MuiInputBase:{
-            styleOverrides:{
-
-            }
+    components: {
+        MuiInputBase: {
+            styleOverrides: {}
         },
-        MuiFormControl:{
-            styleOverrides:{
-                root:{
-                    borderBottom:'none'
+        MuiFormControl: {
+            styleOverrides: {
+                root: {
+                    borderBottom: 'none'
                 }
             }
         }
@@ -71,9 +69,8 @@ const Theme = createTheme({
 const Root = () => (
 
     <ThemeProvider theme={Theme}>
-        {/*<QueryClientProvider client={queryClient}>*/}
-        {/*    <ReactQueryDevtools initialIsOpen/>*/}
-
+        <QueryClientProvider client={queryClient}>
+            <ReactQueryDevtools initialIsOpen/>
             <App/>
             <ToastContainer
                 position="top-right"
@@ -84,11 +81,10 @@ const Root = () => (
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
-                autoClose={2000}
+                autoClose={1000}
             />
-            <ToastContainer />
-        {/*</QueryClientProvider>*/}
-
+            <ToastContainer/>
+        </QueryClientProvider>
     </ThemeProvider>
 )
 

@@ -8,7 +8,7 @@ export const CustomFormControl = styled(FormControl)({
     '& .MuiFilledInput-root': {
         borderRadius: '20px !important',
     },
-    '& .MuiSelect-select':{
+    '& .MuiSelect-select': {
         padding: '8px !important'
     },
     '& .MuiFilledInput-underline:before': {
@@ -26,7 +26,7 @@ const Main = ({children}) => {
             <AppBar position="sticky" className="header">
                 <Toolbar sx={{paddingLeft: '0 !important'}}>
                     <img className={"logo"} src={InfoCubedLogo} height={40} alt="logo"
-                          style={{pointerEvents: "all", cursor: 'pointer'}}/>
+                         style={{pointerEvents: "all", cursor: 'pointer'}}/>
                 </Toolbar>
             </AppBar>
             {children}
