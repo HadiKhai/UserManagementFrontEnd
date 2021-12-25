@@ -8,7 +8,7 @@ import configureMutations from "./mutations/mutations";
 const configureQueryClient = () => {
     const baseConfig = {
         API_HOST:
-            'https://webapp-211223211530.azurewebsites.net/api',
+            'https://user-management-react.azurewebsites.net/api',
         keepPreviousData: true,
     };
 
